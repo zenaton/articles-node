@@ -1,0 +1,21 @@
+{
+  "name": "rent-payment-workflow",
+  "description": "Rent Payment Workflow",
+  "version": "1.0.0",
+  "author": "Zenaton",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zenaton/articles-node.git"
+  },
+  "homepage": "https://zenaton.com",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "debug": "node index.js --inspect"
+  },
+  "dependencies": {
+    "express": "4.16.4",
+    "zenaton": "0.4.10"
+  }
+}
