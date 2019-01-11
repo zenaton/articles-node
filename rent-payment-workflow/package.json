@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "express": "4.16.4",
+    "uuid": "3.3.2",
     "zenaton": "0.4.10"
   }
 }
