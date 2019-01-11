@@ -19,18 +19,16 @@ git clone https://github.com/zenaton/articles-node.git
 cd articles-node/rent-payment-workflow
 ```
 
-* Make sure to have NodeJS installed on your machine. Alternatively if you have [asdf](https://github.com/asdf-vm/asdf) installed with the NodeJS plugin, you can run `asdf install`.
-
 * Run `npm install` to install dependencies.
 
-* Copy the `.env.example` file and name it `.env`. Inside this new file, set the `ZENATON_APP_ID` and `ZENATON_API_TOKEN` keys with your [Zenaton credentials](https://zenaton.com/app/api).
+* Copy the `.env.example` file and name it `.env`. Update `ZENATON_APP_ID` and `ZENATON_API_TOKEN` values with your [Zenaton credentials](https://zenaton.com/app/api).
 
 ## Running
 
 * Have the Zenaton agent listen to workflows by running the `listen` command.
 
 ```bash
-zenaton listen --env=.env --boot=src/boot.js
+zenaton listen --env=.env --boot=boot.js
 ```
 
 * Run `npm start` to start the web server and our rent payment workflow.  
