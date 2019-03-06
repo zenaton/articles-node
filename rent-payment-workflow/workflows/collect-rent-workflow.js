@@ -12,15 +12,15 @@ module.exports = Workflow("CollectRent", {
     const { tenantId, placeId, month, year } = this.data;
     return `TENANT#${tenantId}-PLACE#${placeId}-MONTH#${month}-YEAR#${year}`;
   },
-  handle() {
-    new AskForRentPayment(this.data).dispatch();
+  async handle() {
+    await new AskForRentPayment(this.data).dispatch();
 
-    const event = new Wait("RentPaid").minutes(1).execute();
+    const event = await new Wait("RentPaid").minutes(1).execute();
     if (event) {
-      new SlackForPayment(this.data).dispatch();
+      await new SlackForPayment(this.data).dispatch();
       return;
     }
 
-    new NotifyOwnerOfNonPayment(this.data).dispatch();
+    await new NotifyOwnerOfNonPayment(this.data).dispatch();
   }
 });

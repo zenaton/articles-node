@@ -1,3 +1,6 @@
+# Zenaton log files
+**/zenaton.*
+
 # Logs
 logs
 *.log
@@ -78,8 +81,3 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
-
-# Zenaton log files
-**/zenaton.out
-**/zenaton.err
-**/zenaton.log
