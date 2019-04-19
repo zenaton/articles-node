@@ -15,8 +15,9 @@
     "debug": "node index.js --inspect"
   },
   "dependencies": {
+    "dotenv": "7.0.0",
     "express": "4.16.4",
     "uuid": "3.3.2",
-    "zenaton": "0.5.1"
+    "zenaton": "0.5.2"
   }
 }
