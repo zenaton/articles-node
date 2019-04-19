@@ -7,6 +7,8 @@ const CollectRentWorkflow = require("./workflows/collect-rent-workflow");
 // Start Zenaton client
 require("./client");
 
+const PORT = process.env.PORT || 8080;
+
 // Start the workflow
 const FAKE_PLACE_ID = uuid();
 const FAKE_TENANT_ID = uuid();
@@ -26,7 +28,7 @@ new CollectRentWorkflow({
 
 console.log("Use this curl to trigger rent payment");
 console.log(
-  `curl -X POST 'http://localhost:8080/pay-rent/${FAKE_PLACE_ID}/${FAKE_TENANT_ID}?month=${MONTH}&year=${YEAR}'`
+  `curl -X POST 'http://localhost:${PORT}/pay-rent/${FAKE_PLACE_ID}/${FAKE_TENANT_ID}?month=${MONTH}&year=${YEAR}'`
 );
 
 // Start the Express app
@@ -50,4 +52,4 @@ app.post("/pay-rent/:placeId/:tenantId", function(req, res, next) {
     );
 });
 
-app.listen(8080);
+app.listen(PORT);
